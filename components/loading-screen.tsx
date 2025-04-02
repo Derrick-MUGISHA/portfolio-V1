@@ -83,7 +83,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-white/50 mt-4 text-sm font-mono"
             >
-              Loading experience...
+              Welcome to my portfolio...
             </motion.p>
           </div>
         </motion.div>
