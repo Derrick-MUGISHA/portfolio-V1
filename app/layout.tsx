@@ -10,10 +10,10 @@ import ContentPress from "@/components/content-press"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Jean Eric Hirwa - Full Stack Software Developer",
+  title: "DERRICK MUGISHA - Full Stack Software Developer",
   description:
-    "Portfolio of Jean Eric Hirwa, a Full Stack Software Developer specializing in creating exceptional digital experiences.",
-    generator: 'v0.dev'
+    "Derrick Mugisha, a Full Stack Software Developer specializing in creating exceptional digital experiences.",
+    
 }
 
 export default function RootLayout({
