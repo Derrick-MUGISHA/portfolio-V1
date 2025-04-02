@@ -49,7 +49,7 @@ export default function LoadingScreen() {
                 >
                   <div className="text-6xl md:text-8xl font-bold text-white relative z-10">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                      JE
+                      DM
                     </span>
                   </div>
 
