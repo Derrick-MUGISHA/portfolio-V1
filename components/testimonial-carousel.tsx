@@ -13,7 +13,7 @@ const testimonials = [
     role: "CEO, TechStart",
     image: "/placeholder.svg?height=100&width=100",
     content:
-      "Working with Jean Eric was an absolute pleasure. His technical expertise and attention to detail resulted in a product that exceeded our expectations. He was communicative throughout the entire process and delivered on time.",
+      "Working with DERRICK MUGISHA was an absolute pleasure. His technical expertise and attention to detail resulted in a product that exceeded our expectations. He was communicative throughout the entire process and delivered on time.",
     rating: 5,
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     role: "Product Manager, InnovateCorp",
     image: "/placeholder.svg?height=100&width=100",
     content:
-      "Jean Eric's ability to understand our business needs and translate them into elegant technical solutions was impressive. He's not just a developer, but a true problem solver who adds value to any project.",
+      "DERRICK MUGISHA's ability to understand our business needs and translate them into elegant technical solutions was impressive. He's not just a developer, but a true problem solver who adds value to any project.",
     rating: 5,
   },
   {
@@ -31,7 +31,7 @@ const testimonials = [
     role: "Founder, DesignHub",
     image: "/placeholder.svg?height=100&width=100",
     content:
-      "We hired Jean Eric to rebuild our company website and the results were outstanding. His technical skills combined with an eye for design created a website that perfectly represents our brand and has significantly improved our conversion rates.",
+      "We hired DERRICK MUGISHA to rebuild our company website and the results were outstanding. His technical skills combined with an eye for design created a website that perfectly represents our brand and has significantly improved our conversion rates.",
     rating: 5,
   },
   {
@@ -40,7 +40,7 @@ const testimonials = [
     role: "CTO, FinTech Solutions",
     image: "/placeholder.svg?height=100&width=100",
     content:
-      "Jean Eric helped us develop a complex financial application with strict security requirements. His code quality and attention to security best practices were exceptional. I would highly recommend him for any challenging project.",
+      "DERRICK MUGISHA helped us develop a complex financial application with strict security requirements. His code quality and attention to security best practices were exceptional. I would highly recommend him for any challenging project.",
     rating: 5,
   },
 ]

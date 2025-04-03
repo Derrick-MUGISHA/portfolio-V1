@@ -12,6 +12,7 @@ import { fetchGitHubData } from "@/lib/github";
 import type { GitHubData } from "@/types/github";
 import SimpleCodingBackground from "@/components/simple-coding-background";
 import AnimatedBackground from "@/components/animated-background";
+import ThreeBackground from "@/components/three-background";
 
 export default function Home() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -42,7 +43,8 @@ export default function Home() {
       {/* Three.js Animated Background */}
       <div className="fixed inset-0 -z-10">
         {/* <SimpleCodingBackground /> */}
-        <AnimatedBackground />
+        {/* <AnimatedBackground /> */}
+        <ThreeBackground />
       </div>
 
       {/* Header */}
@@ -339,7 +341,7 @@ export default function Home() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/erichirwa"
+                  href="https://www.linkedin.com/in/mugisha-derrick-479788332?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbUHkFxGrSWuaEOR0NjzD%2Fg%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white"
@@ -362,7 +364,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://twitter.com/erichirwa"
+                  href="https://twitter.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white"

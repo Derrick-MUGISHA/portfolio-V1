@@ -30,8 +30,8 @@ export default function AnimatedBackground() {
       color: string
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * canvas!.width
+        this.y = Math.random() * canvas!.height
         this.size = Math.random() * 3 + 1
         this.speedX = Math.random() * 1 - 0.5
         this.speedY = Math.random() * 1 - 0.5
@@ -54,11 +54,11 @@ export default function AnimatedBackground() {
         this.x += this.speedX
         this.y += this.speedY
 
-        if (this.x > canvas.width) this.x = 0
-        else if (this.x < 0) this.x = canvas.width
+        if (this.x > canvas!.width) this.x = 0
+        else if (this.x < 0) this.x = canvas!.width
 
-        if (this.y > canvas.height) this.y = 0
-        else if (this.y < 0) this.y = canvas.height
+        if (this.y > canvas!.height) this.y = 0
+        else if (this.y < 0) this.y = canvas!.height
       }
 
       draw() {
@@ -105,7 +105,7 @@ export default function AnimatedBackground() {
     // Animation loop
     function animate() {
       if (!ctx) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, canvas!.width, canvas!.height)
 
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update()
