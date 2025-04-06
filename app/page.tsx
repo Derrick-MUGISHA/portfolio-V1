@@ -47,9 +47,6 @@ export default function Home() {
         <ThreeBackground />
       </div>
 
-      {/* Header */}
-      {/*   */}
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-5 py-16">
         <div className="max-w-4xl mx-auto">
@@ -70,18 +67,6 @@ export default function Home() {
             Derrick MUGISHA
           </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-64 md:h-64 mx-auto mb-6 sm:mb-8 rounded-full overflow-hidden border-4 border-white/20 shadow-xl"
-          >
-            <img
-              src="https://i.postimg.cc/pLV1Tw7K/IMG-20250331-142931-186-removebg-preview.png"
-              alt="Derrick Mugisha"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
