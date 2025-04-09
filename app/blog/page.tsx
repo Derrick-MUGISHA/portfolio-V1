@@ -282,13 +282,13 @@ export default function BlogPage() {
                       <div className="flex items-center space-x-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden">
                           <img
-                            src="/placeholder.svg?height=64&width=64&text=Eric"
-                            alt="Jean Eric Hirwa"
+                            src="https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png"
+                            alt="Derrick Mugisha"
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div>
-                          <h3 className="text-white font-medium">Jean Eric Hirwa</h3>
+                          <h3 className="text-white font-medium">DERRICK MUGISHA</h3>
                           <p className="text-white/70 text-sm">Full Stack Developer</p>
                         </div>
                       </div>

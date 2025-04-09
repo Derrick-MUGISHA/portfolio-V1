@@ -1,17 +1,24 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
-import { Menu, Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import MobileMenu from "./mobile-menu"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import {
+  Menu,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import MobileMenu from "./mobile-menu";
 
 export default function ResponsiveNavigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -20,53 +27,82 @@ export default function ResponsiveNavigation() {
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
-  ]
+  ];
 
   const socialLinks = [
-    { name: "GitHub", icon: <Github className="h-5 w-5" />, url: "https://github.com/erichirwa" },
-    { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, url: "https://linkedin.com/in/erichirwa" },
-    { name: "Twitter", icon: <Twitter className="h-5 w-5" />, url: "https://twitter.com/erichirwa" },
-    { name: "Instagram", icon: <Instagram className="h-5 w-5" />, url: "https://instagram.com/erichirwa" },
-    { name: "YouTube", icon: <Youtube className="h-5 w-5" />, url: "https://youtube.com/erichirwa" },
-  ]
+    {
+      name: "GitHub",
+      icon: <Github className="h-5 w-5" />,
+      url: "https://github.com/erichirwa",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="h-5 w-5" />,
+      url: "https://linkedin.com/in/erichirwa",
+    },
+    {
+      name: "Twitter",
+      icon: <Twitter className="h-5 w-5" />,
+      url: "https://twitter.com/erichirwa",
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram className="h-5 w-5" />,
+      url: "https://instagram.com/erichirwa",
+    },
+    {
+      name: "YouTube",
+      icon: <Youtube className="h-5 w-5" />,
+      url: "https://youtube.com/erichirwa",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Check if a path is active (exact match or starts with for nested routes)
   const isActive = (path: string) => {
     if (path === "/") {
-      return pathname === path
+      return pathname === path;
     }
-    return pathname === path || pathname.startsWith(`${path}/`)
-  }
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-black/30 backdrop-blur-sm"
+          scrolled
+            ? "bg-black/80 backdrop-blur-md shadow-md"
+            : "bg-black/30 backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-white flex items-center">
+          <Link
+            href="/"
+            className="text-xl font-bold text-white flex items-center"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="mr-2 text-2xl"
+              className="mr-2"
             >
-              👨‍💻
+              <img
+                src="https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png"
+                alt="Derrick Mugisha"
+                className="rounded-full w-8 h-8 object-cover"
+              />
             </motion.div>
             <motion.span
               initial={{ opacity: 0, x: -10 }}
@@ -98,7 +134,11 @@ export default function ResponsiveNavigation() {
                     <motion.span
                       className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full"
                       layoutId="navIndicator"
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 350,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </Link>
@@ -127,7 +167,11 @@ export default function ResponsiveNavigation() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 }}
             >
-              <Button asChild variant="outline" className="ml-4 bg-white text-black hover:bg-white/90 border-none">
+              <Button
+                asChild
+                variant="outline"
+                className="ml-4 bg-white text-black hover:bg-white/90 border-none"
+              >
                 <Link href="/contact">LET'S TALK</Link>
               </Button>
             </motion.div>
@@ -149,6 +193,5 @@ export default function ResponsiveNavigation() {
       {/* Mobile Menu */}
       <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
-  )
+  );
 }
-

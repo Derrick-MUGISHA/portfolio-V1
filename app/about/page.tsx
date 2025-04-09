@@ -107,7 +107,7 @@ export default function AboutPage() {
                 <span className="text-green-400 font-mono">const</span>{" "}
                 <span className="text-yellow-400 font-mono">developer</span> = {"{"}
                 <span className="text-purple-400 font-mono"> name</span>:{" "}
-                <span className="text-green-400 font-mono">"Jean Eric Hirwa"</span>,
+                <span className="text-green-400 font-mono">"DERRICK MUGISHA"</span>,
                 <span className="text-purple-400 font-mono"> passion</span>:{" "}
                 <span className="text-green-400 font-mono">"Building amazing digital experiences"</span>,
                 <span className="text-purple-400 font-mono"> caffeineLevel</span>:{" "}
@@ -186,12 +186,12 @@ export default function AboutPage() {
                   <h2 className="text-2xl font-bold text-white mb-4">Hello, World!</h2>
                   <div className="space-y-4 text-white/80">
                     <p>
-                      I'm Jean Eric, a passionate Full Stack Developer with a love for creating elegant solutions to
-                      complex problems. My journey in tech began when I disassembled my first computer at age 12 (much
+                      I'm DERRICK MUGISHA, a passionate Full Stack Developer with a love for creating elegant solutions to
+                      complex problems. My journey in tech began when I disassembled my first computer at age 16 (much
                       to my parents' dismay) and has evolved into a career building software that makes a difference.
                     </p>
                     <p>
-                      With over 5 years of professional experience, I've worked across the entire development stack,
+                      With over 1+ years of professional experience, I've worked across the entire development stack,
                       from crafting pixel-perfect frontends with React and Three.js to architecting robust backend
                       systems with Node.js and various databases.
                     </p>
@@ -361,7 +361,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mb-16">
-              <h2 className="text-3xl font-bold text-white mb-8">My Journey</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">My Studies</h2>
 
               <div className="relative border-l-2 border-white/20 pl-8 space-y-12">
                 {[
@@ -389,22 +389,22 @@ export default function AboutPage() {
                       "Created responsive and accessible user interfaces for web applications. Specialized in animation and interactive experiences.",
                     icon: <Code className="h-6 w-6 text-green-400" />,
                   },
-                  {
-                    year: "2018 - 2019",
-                    title: "Junior Developer",
-                    company: "StartupLaunch",
-                    description:
-                      "Started career as a junior developer working on frontend projects. Learned the fundamentals of web development and collaborative coding.",
-                    icon: <Terminal className="h-6 w-6 text-yellow-400" />,
-                  },
-                  {
-                    year: "2014 - 2018",
-                    title: "Computer Science Degree",
-                    company: "Tech University",
-                    description:
-                      "Graduated with a degree in Computer Science with focus on software development and algorithms.",
-                    icon: <Database className="h-6 w-6 text-red-400" />,
-                  },
+                  // {
+                  //   year: "2018 - 2019",
+                  //   title: "Junior Developer",
+                  //   company: "StartupLaunch",
+                  //   description:
+                  //     "Started career as a junior developer working on frontend projects. Learned the fundamentals of web development and collaborative coding.",
+                  //   icon: <Terminal className="h-6 w-6 text-yellow-400" />,
+                  // },
+                  // {
+                  //   year: "2014 - 2018",
+                  //   title: "Computer Science Degree",
+                  //   company: "Tech University",
+                  //   description:
+                  //     "Graduated with a degree in Computer Science with focus on software development and algorithms.",
+                  //   icon: <Database className="h-6 w-6 text-red-400" />,
+                  // },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

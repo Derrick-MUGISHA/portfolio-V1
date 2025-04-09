@@ -42,7 +42,7 @@ export default function Home() {
   const personalPhotos = [
     {
       id: '1',
-      src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
+      src: 'https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png',
       alt: 'Professional headshot',
       caption: 'Professional',
       description: 'At the annual tech conference in 2024'

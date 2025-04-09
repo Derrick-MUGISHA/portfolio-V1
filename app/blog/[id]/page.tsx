@@ -150,8 +150,8 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
       category: "Frontend",
       tags: ["React", "Tailwind CSS", "Responsive Design", "Web Development", "CSS"],
       author: {
-        name: "Jean Eric Hirwa",
-        avatar: "/placeholder.svg?height=64&width=64&text=Eric",
+        name: "DERRICK MUGISHA",
+        avatar: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
         bio: "Full Stack Developer specializing in React and Node.js. Passionate about creating beautiful, responsive web applications.",
       },
     }

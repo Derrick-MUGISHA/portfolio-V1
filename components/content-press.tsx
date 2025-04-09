@@ -98,7 +98,7 @@ export default function ContentPress() {
               </Button>
               <Button variant="ghost" className="w-full justify-start text-left" onClick={handleDownloadPDF}>
                 <Download className="mr-2 h-4 w-4" />
-                Download as PDF
+                Download as MY Cv
               </Button>
             </div>
           </motion.div>
