@@ -111,7 +111,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 sm:mb-6"
           >
-            A Full Stack Software Developer
+            A Software Developer and a UI/UX Designer
           </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ export default function Home() {
         <section className="max-w-4xl mx-auto px-4 py-8 sm:py-16"> {/* Responsive padding */}
           <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">My Story</h2> {/* Responsive text and spacing */}
           <p className="text-base sm:text-lg mb-4"> {/* Responsive text */}
-            I'm a passionate designer and developer with over 5 years of
+            I'm a passionate designer and developer with over 1+ years of
             experience in creating digital experiences that delight users.
             My approach combines creativity with technical expertise to
             deliver solutions that not only look good but perform well.
@@ -317,7 +317,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Client Testimonials
+              Client Testimonials and collaborations
             </h2>
             <p className="text-xl text-white/70">
               What people say about working with me.
@@ -370,15 +370,15 @@ export default function Home() {
                 exceptional digital experiences.
               </p>
               <div className="flex space-x-4">
-                <a
+                <Link
                   href="https://github.com/Derrick-MUGISHA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white"
                 >
                   <Github className="h-5 w-5" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.linkedin.com/in/mugisha-derrick-479788332?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbUHkFxGrSWuaEOR0NjzD%2Fg%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -400,8 +400,8 @@ export default function Home() {
                     <rect x="2" y="9" width="4" height="12"></rect>
                     <circle cx="4" cy="4" r="2"></circle>
                   </svg>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://twitter.com/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -421,7 +421,7 @@ export default function Home() {
                   >
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div>
@@ -533,7 +533,7 @@ export default function Home() {
                 <li className="text-white/70">Location: Kigali, Rwanda</li>
               </ul>
               <a
-                href="https://wa.me/250123456789"
+                href="https://wa.me/250793094202"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center mt-4 text-white/70 hover:text-white transition-colors"
@@ -561,7 +561,7 @@ export default function Home() {
               © {new Date().getFullYear()} DERRICK MUGISHA. All rights reserved.
             </p>
             <p className="text-white/50 text-sm mt-2 font-mono">
-              // This website runs on caffeine and good vibes
+              // This portfolio runs on caffeine and good vibes
             </p>
           </div>
         </div>
