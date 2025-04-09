@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import ThreeBackground from "@/components/three-background"
+import AnimatedBackground from "@/components/animated-background"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -53,7 +54,7 @@ export default function ContactPage() {
     <div className="relative min-h-screen">
       {/* Three.js Animated Background */}
       <div className="fixed inset-0 -z-10">
-        <ThreeBackground />
+         <AnimatedBackground />
       </div>
 
       {/* Header */}

@@ -13,6 +13,7 @@ import type { GitHubData } from "@/types/github";
 import SimpleCodingBackground from "@/components/simple-coding-background";
 import AnimatedBackground from "@/components/animated-background";
 import ThreeBackground from "@/components/three-background";
+import PersonalGallery from "@/components/ui/PortfolioGallery";
 
 export default function Home() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -37,18 +38,55 @@ export default function Home() {
   const scrollToContent = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  
+  const personalPhotos = [
+    {
+      id: '1',
+      src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
+      alt: 'Professional headshot',
+      caption: 'Professional',
+      description: 'At the annual tech conference in 2024'
+    },
+    {
+      id: '2',
+      src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
+      alt: 'Casual portrait',
+      caption: 'Everyday Me',
+      description: 'Weekend vibes at the local park'
+    },
+    {
+      id: '3',
+      src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
+      alt: 'Pursuing my hobby',
+      caption: 'Photography Enthusiast',
+      description: 'Capturing moments is my passion'
+    },
+    {
+      id: '4',
+      src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
+      alt: 'Travel photo',
+      caption: 'Explorer',
+      description: 'Visiting the mountains last summer'
+    },
+    {
+      id: '5',
+      src: "/placeholder.svg?height=600&width=800&text=Coding+Session",
+      alt: 'Speaking at an event',
+      caption: 'Public Speaker',
+      description: 'Sharing insights at the design summit'
+    }
+  ];
   return (
     <div className="relative min-h-screen">
       {/* Three.js Animated Background */}
       <div className="fixed inset-0 -z-10">
         {/* <SimpleCodingBackground /> */}
-        {/* <AnimatedBackground /> */}
-        <ThreeBackground />
+        <AnimatedBackground />
+        {/* <ThreeBackground /> */}
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-5 py-16">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-5 py-16 mt-16">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -87,6 +125,21 @@ export default function Home() {
               // Yes, I speak fluent JavaScript, Python, and Java even more!
             </span>
           </motion.p>
+          <main className="min-h-screen" ref={scrollRef}>
+        <PersonalGallery photos={personalPhotos} />
+
+        {/* Additional content about yourself */}
+        <section className="max-w-4xl mx-auto px-4 py-8 sm:py-16"> {/* Responsive padding */}
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">My Story</h2> {/* Responsive text and spacing */}
+          <p className="text-base sm:text-lg mb-4"> {/* Responsive text */}
+            I'm a passionate designer and developer with over 5 years of
+            experience in creating digital experiences that delight users.
+            My approach combines creativity with technical expertise to
+            deliver solutions that not only look good but perform well.
+          </p>
+          {/* More content about yourself */}
+        </section>
+      </main>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
