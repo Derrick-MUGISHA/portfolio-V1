@@ -33,27 +33,27 @@ export default function ResponsiveNavigation() {
     {
       name: "GitHub",
       icon: <Github className="h-5 w-5" />,
-      url: "https://github.com/erichirwa",
+      url: "https://github.com/Derrick-MUGISHA",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      url: "https://linkedin.com/in/erichirwa",
+      url: "www.linkedin.com/in/mugisha-derrick-479788332",
     },
     {
       name: "Twitter",
       icon: <Twitter className="h-5 w-5" />,
-      url: "https://twitter.com/erichirwa",
+      url: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09",
     },
     {
       name: "Instagram",
       icon: <Instagram className="h-5 w-5" />,
-      url: "https://instagram.com/erichirwa",
+      url: "https://t.co/Cgt1FrrzGO",
     },
     {
       name: "YouTube",
       icon: <Youtube className="h-5 w-5" />,
-      url: "https://youtube.com/erichirwa",
+      url: "https://www.youtube.com/@mugishaderrick-g1z",
     },
   ];
 
