@@ -76,6 +76,8 @@ export default function Home() {
       description: 'Sharing insights at the design summit'
     }
   ];
+
+  
   return (
     <div className="relative min-h-screen">
       {/* Three.js Animated Background */}
@@ -582,3 +584,34 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Home | Derrick Mugisha",
+  description:
+    "Welcome to the portfolio of Derrick Mugisha, a creative software engineer focused on building beautiful digital solutions.",
+  openGraph: {
+    title: "DERRICK MUGISHA - Full Stack Developer & Designer",
+    description:
+      "Creative software engineer building sleek user interfaces and robust backend systems.",
+    url: "https://derrickmugisha.vercel.app",
+    siteName: "Derrick Mugisha Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Derrick Mugisha OG image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DERRICK MUGISHA - Full Stack Developer & Designer",
+    description:
+      "Creative software engineer building sleek user interfaces and robust backend systems.",
+    images: ["/og-image.jpg"],
+    creator: "@yourTwitterHandle",
+  },
+};
