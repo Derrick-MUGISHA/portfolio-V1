@@ -38,7 +38,7 @@ export default function ResponsiveNavigation() {
     {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      url: "www.linkedin.com/in/mugisha-derrick-479788332",
+      url: "www.linkedin.com/in/derrickmugisha",
     },
     {
       name: "Twitter",
