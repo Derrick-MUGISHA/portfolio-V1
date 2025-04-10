@@ -5,12 +5,11 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowLeft, Send, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowLeft, Send, Mail, MapPin, Phone, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
-import ThreeBackground from "@/components/three-background"
 import AnimatedBackground from "@/components/animated-background"
 
 export default function ContactPage() {
@@ -22,6 +21,7 @@ export default function ContactPage() {
     message: "",
   })
   const [loading, setLoading] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -32,22 +32,61 @@ export default function ContactPage() {
     e.preventDefault()
     setLoading(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Send data to API route
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to: "derrickmugisha169@gmail.com" // The recipient email
+        }),
+      })
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    })
+      const data = await response.json()
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-
-    setLoading(false)
+      if (response.ok) {
+        // Show success notification
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you! Your email has been sent to Derrick.",
+          variant: "default",
+          className: "bg-green-600 text-white border-green-700",
+        })
+        
+        // Show success message in form
+        setShowSuccess(true)
+        setTimeout(() => setShowSuccess(false), 5000)
+        
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        toast({
+          title: "Error sending message",
+          description: data.error || "Something went wrong. Please try again.",
+          variant: "destructive"
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive"
+      })
+      console.error("Error sending email:", error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -56,51 +95,6 @@ export default function ContactPage() {
       <div className="fixed inset-0 -z-10">
          <AnimatedBackground />
       </div>
-
-      {/* Header */}
-      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-white">
-            Jean Eric Hirwa
-          </Link>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/services" className="text-white/80 hover:text-white transition-colors">
-              SERVICES
-            </Link>
-            <Link href="/work" className="text-white/80 hover:text-white transition-colors">
-              WORK
-            </Link>
-            <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-              ABOUT
-            </Link>
-            <Link href="/blog" className="text-white/80 hover:text-white transition-colors">
-              BLOG
-            </Link>
-            <Button asChild variant="outline" className="bg-white text-black hover:bg-white/90 border-none">
-              <Link href="/contact">LET'S TALK</Link>
-            </Button>
-          </nav>
-          <Button variant="ghost" size="icon" className="md:hidden text-white">
-            <span className="sr-only">Open menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </Button>
-        </div>
-      </header> */}
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
@@ -127,6 +121,19 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+                  {showSuccess && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-green-600/90 text-white p-4 rounded-lg mb-6 flex items-center"
+                    >
+                      <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Thank you for your message!</p>
+                        <p className="text-sm text-white/90">Your email has been successfully sent to Derrick.</p>
+                      </div>
+                    </motion.div>
+                  )}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -234,7 +241,7 @@ export default function ContactPage() {
                         <div>
                           <p className="text-white font-medium">Email</p>
                           <a
-                            href="mailto:hello@erichirwa.com"
+                            href="mailto:derrickmugisha169@gmail.com"
                             className="text-white/70 hover:text-white transition-colors"
                           >
                             derrickmugisha169@gmail.com
@@ -252,7 +259,7 @@ export default function ContactPage() {
                         <Phone className="h-5 w-5 text-white mr-3 mt-0.5" />
                         <div>
                           <p className="text-white font-medium">Phone</p>
-                          <a href="tel:+250123456789" className="text-white/70 hover:text-white transition-colors">
+                          <a href="tel:+250793094202" className="text-white/70 hover:text-white transition-colors">
                             +250 793 094 202
                           </a>
                         </div>
@@ -263,7 +270,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-4">Follow Me</h3>
                     <div className="flex space-x-4">
-                      <a
+                      <Link
                         href="https://github.com/erichirwa"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -283,8 +290,8 @@ export default function ContactPage() {
                         >
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="https://linkedin.com/in/erichirwa"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -306,8 +313,8 @@ export default function ContactPage() {
                           <rect x="2" y="9" width="4" height="12"></rect>
                           <circle cx="4" cy="4" r="2"></circle>
                         </svg>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="https://twitter.com/erichirwa"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -327,8 +334,7 @@ export default function ContactPage() {
                         >
                           <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                         </svg>
-                      </a>
-                      
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -346,4 +352,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

@@ -17,7 +17,7 @@ export default function AboutPage() {
 
   const images = [
     {
-      src: "/placeholder.svg?height=600&width=800&text=Coding+Session",
+      src: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
       alt: "Me during a coding session",
       caption: "Deep in the zone, debugging a particularly tricky recursive function.",
     },

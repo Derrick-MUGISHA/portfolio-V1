@@ -40,6 +40,7 @@ export default function ServicesPage() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -53,23 +54,61 @@ export default function ServicesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setSuccessMessage("");
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Send data to API route
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: `Service Inquiry: ${formData.service}`,
+          message: formData.message,
+          to: "derrickmugisha169@gmail.com", // The recipient email
+          type: "service-inquiry" // Helps identify the form type
+        }),
+      });
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your inquiry. I'll get back to you soon.",
-    });
+      const data = await response.json();
 
-    setFormData({
-      name: "",
-      email: "",
-      service: "",
-      message: "",
-    });
-
-    setLoading(false);
+      if (response.ok) {
+        // Set success message with green notification
+        setSuccessMessage("Email successfully sent to Derrick!");
+        
+        toast({
+          title: "Inquiry sent!",
+          description: "Thank you for your interest. I'll get back to you soon about your project.",
+          variant: "default", // Using default variant
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        toast({
+          title: "Error sending inquiry",
+          description: data.error || "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending inquiry",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive"
+      });
+      console.error("Error sending email:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const services = [
@@ -277,6 +316,10 @@ export default function ServicesPage() {
                         <Link
                           href="#contact-form"
                           className="flex items-center justify-center"
+                          onClick={() => {
+                            // Pre-select the service in the form when clicking this button
+                            setFormData(prev => ({...prev, service: service.title}));
+                          }}
                         >
                           Inquire About This Service
                         </Link>
@@ -303,6 +346,28 @@ export default function ServicesPage() {
 
             <Card className="bg-white/5 backdrop-blur-sm border border-white/10">
               <CardContent className="p-6">
+                {/* Success message notification */}
+                {successMessage && (
+                  <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-md flex items-center">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="20" 
+                      height="20" 
+                      viewBox="0 0 24 24" 
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-green-400 mr-2"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span className="text-green-400">{successMessage}</span>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -418,7 +483,7 @@ export default function ServicesPage() {
                   <div className="text-center text-white/60 text-sm">
                     <p>Or reach out directly via WhatsApp:</p>
                     <a
-                      href="https://wa.me/qr/WY2YBR4QK24MO1"
+                      href="https://wa.me/250793094202"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center mt-2 text-white hover:text-white/80 transition-colors"
