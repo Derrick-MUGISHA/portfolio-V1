@@ -25,11 +25,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   ]
 
   const socialLinks = [
-    { name: "GitHub", icon: <Github className="h-5 w-5" />, url: "https://github.com/erichirwa" },
-    { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, url: "https://linkedin.com/in/erichirwa" },
-    { name: "Twitter", icon: <Twitter className="h-5 w-5" />, url: "https://twitter.com/erichirwa" },
-    { name: "Instagram", icon: <Instagram className="h-5 w-5" />, url: "https://instagram.com/erichirwa" },
-    { name: "YouTube", icon: <Youtube className="h-5 w-5" />, url: "https://youtube.com/erichirwa" },
+    { name: "GitHub", icon: <Github className="h-5 w-5" />, url: "https://github.com/Derrick-MUGISHA" },
+    { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, url: "https://www.linkedin.com/in/derrickmugisha" },
+    { name: "Twitter", icon: <Twitter className="h-5 w-5" />, url: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09" },
+    { name: "Instagram", icon: <Instagram className="h-5 w-5" />, url: "https://t.co/Cgt1FrrzGO" },
+    { name: "YouTube", icon: <Youtube className="h-5 w-5" />, url: "https://www.youtube.com/@mugishaderrick-g1z" },
   ]
 
   // Check if a path is active (exact match or starts with for nested routes)

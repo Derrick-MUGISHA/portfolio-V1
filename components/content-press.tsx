@@ -14,8 +14,8 @@ const CV_FILES = [
     id: "1YOUR_FILE_ID_1",
     title: "Professional CV (PDF)",
     type: "pdf",
-    downloadUrl: "https://drive.google.com/uc?id=1YOUR_FILE_ID_1&export=download",
-    previewUrl: "https://drive.google.com/file/d/1YOUR_FILE_ID_1/preview",
+    downloadUrl: "https://drive.google.com/file/d/1boLXIlo5l9he-8aR9qqeLKGPwPHhVXur/view?usp=sharing",
+    previewUrl: "https://drive.google.com/file/d/1boLXIlo5l9he-8aR9qqeLKGPwPHhVXur/view?usp=sharing",
     date: "2024-2025"
   },
   // {
