@@ -271,7 +271,7 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-white mb-4">Follow Me</h3>
                     <div className="flex space-x-4">
                       <Link
-                        href="https://github.com/erichirwa"
+                        href="https://github.com/Derrick-MUGISHA"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-white/10 hover:bg-white/20 transition-colors p-3 rounded-full"
@@ -292,7 +292,7 @@ export default function ContactPage() {
                         </svg>
                       </Link>
                       <Link
-                        href="https://linkedin.com/in/erichirwa"
+                        href="https://www.linkedin.com/in/derrickmugisha"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-white/10 hover:bg-white/20 transition-colors p-3 rounded-full"
@@ -315,7 +315,7 @@ export default function ContactPage() {
                         </svg>
                       </Link>
                       <Link
-                        href="https://twitter.com/erichirwa"
+                        href="https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-white/10 hover:bg-white/20 transition-colors p-3 rounded-full"
