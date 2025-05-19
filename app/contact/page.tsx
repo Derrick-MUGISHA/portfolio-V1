@@ -237,7 +237,7 @@ export default function ContactPage() {
                     <p className="text-white/70 mb-6">Feel free to reach out through any of the following channels.</p>
                     <ul className="space-y-4">
                       <li className="flex items-start">
-                        <Mail className="h-5 w-5 text-white mr-3 mt-0.5" />
+                        <Mail className="h-6 w-6 text-white mr-3 mt-0.5 min-w-[24px]" />
                         <div>
                           <p className="text-white font-medium">Email</p>
                           <a
@@ -335,6 +335,7 @@ export default function ContactPage() {
                           <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                         </svg>
                       </Link>
+
                     </div>
                   </div>
                 </div>
