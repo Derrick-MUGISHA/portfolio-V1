@@ -14,20 +14,25 @@ export const metadata: Metadata = {
   description:
     "Derrick Mugisha, a Full Stack Software Developer specializing in creating exceptional digital experiences.",
   metadataBase: new URL("https://derrickmugisha.vercel.app"),
+  icons: {
+    icon: '/public/favicon.ico',
+    shortcut: '/public/favicon.svg',
+    apple: '/public/favicon.svg',
+  },
   openGraph: {
     title: "DERRICK MUGISHA - Full Stack Software Developer",
     description:
       "Explore the portfolio of Derrick Mugisha – Developer, Designer, and Tech Visionary.",
     url: "https://derrickmugisha.vercel.app",
     siteName: "Derrick Mugisha Portfolio",
-    images: [
-      {
-        url: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
-        width: 1200,
-        height: 630,
-        alt: "Derrick Mugisha Portfolio Preview",
-      },
-    ],
+images: [
+  {
+    url: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
+    width: 1200,
+    height: 630,
+    alt: "Derrick Mugisha Portfolio Preview",
+  }
+],
     locale: "en_US",
     type: "website",
   },
@@ -36,8 +41,8 @@ export const metadata: Metadata = {
     title: "DERRICK MUGISHA - Full Stack Software Developer",
     description:
       "Explore the portfolio of Derrick Mugisha – Developer, Designer, and Tech Visionary.",
-    images: ["/og-image.jpg"],
-    creator: "@yourTwitterHandle", // optional, add your Twitter username if you have one
+    images: ["/icons/derrick-icon.png"],
+    creator: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09", // optional, add your Twitter username if you have one
   },
 };
 

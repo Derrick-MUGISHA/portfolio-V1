@@ -27,7 +27,7 @@ export const metadata = {
     description:
       "Creative software engineer building sleek user interfaces and robust backend systems.",
     images: ["https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png"],
-    creator: "@yourTwitterHandle",
+    creator: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09",
   },
 };
 
