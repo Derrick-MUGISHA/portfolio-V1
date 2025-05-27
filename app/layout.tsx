@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     "Derrick Mugisha, a Full Stack Software Developer specializing in creating exceptional digital experiences.",
   metadataBase: new URL("https://derrickmugisha.vercel.app"),
   icons: {
-    icon: '/public/favicon.ico',
-    shortcut: '/public/favicon.svg',
-    apple: '/public/favicon.svg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: "DERRICK MUGISHA - Full Stack Software Developer",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
       "Explore the portfolio of Derrick Mugisha – Developer, Designer, and Tech Visionary.",
     url: "https://derrickmugisha.vercel.app",
     siteName: "Derrick Mugisha Portfolio",
-images: [
-  {
-    url: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
-    width: 1200,
-    height: 630,
-    alt: "Derrick Mugisha Portfolio Preview",
-  }
-],
+    images: [
+      {
+        url: "https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Derrick Mugisha Portfolio Preview",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -42,9 +42,10 @@ images: [
     description:
       "Explore the portfolio of Derrick Mugisha – Developer, Designer, and Tech Visionary.",
     images: ["/icons/derrick-icon.png"],
-    creator: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09", // optional, add your Twitter username if you have one
+    creator: "https://x.com/__derr1ck__?t=IwhvURRPQKJQTS4HEbCsHQ&s=09",
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -58,6 +59,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
           rel="stylesheet"
         />
+        
       </head>
       <body className={`${inter.className} bg-black text-white`}>
         <ThemeProvider
