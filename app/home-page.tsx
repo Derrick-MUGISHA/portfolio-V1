@@ -40,19 +40,19 @@ export default function Homepage() {
   };
   
   const personalPhotos = [
-    // {
-    //   id: '1',
-    //   src: 'https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png',
-    //   alt: 'Professional headshot',
-    //   caption: 'Professional',
-    //   description: 'At the annual tech conference in 2024'
-    // },
+    {
+      id: '1',
+      src: 'https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png',
+      alt: 'Professional headshot',
+      caption: 'Professional',
+      description: 'My profile pic'
+    },
     {
       id: '2',
       src: 'https://i.postimg.cc/0Nkm9xBg/May-27-2025-04-26-19-PM.png',
       alt: 'Casual portrait',
-      caption: 'Everyday Me',
-      description: 'Weekend vibes at the local park'
+      caption: 'New version of Me',
+      description: 'New trying version of my self'
     },
     // {
     //   id: '3',
