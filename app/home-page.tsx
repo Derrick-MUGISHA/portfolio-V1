@@ -14,6 +14,7 @@ import SimpleCodingBackground from "@/components/simple-coding-background";
 import AnimatedBackground from "@/components/animated-background";
 import ThreeBackground from "@/components/three-background";
 import PersonalGallery from "@/components/ui/PortfolioGallery";
+import { DemoOne } from "@/components/Newbg";
 
 export default function Homepage() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -54,20 +55,20 @@ export default function Homepage() {
       caption: 'New version of Me',
       description: 'New trying version of my self'
     },
-    // {
-    //   id: '3',
-    //   src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
-    //   alt: 'Pursuing my hobby',
-    //   caption: 'Photography Enthusiast',
-    //   description: 'Capturing moments is my passion'
-    // },
-    // {
-    //   id: '4',
-    //   src: '/placeholder.svg?height=600&width=800&text=Coding+Session',
-    //   alt: 'Travel photo',
-    //   caption: 'Explorer',
-    //   description: 'Visiting the mountains last summer'
-    // },
+    {
+      id: '3',
+      src: 'https://i.postimg.cc/J0DsChMb/Snapchat-2102374093.jpg',
+      alt: 'Pursuing my hobby',
+      caption: 'MY Locking Mood',
+      description: 'Capturing moments in the Office'
+    },
+    {
+      id: '4',
+      src: 'https://i.postimg.cc/pXBZd2jD/Snapchat-1102779594.jpg',
+      alt: 'Travel photo',
+      caption: 'Meeting Time 🦾',
+      description: 'One of the most memorable moments with my team'
+    },
     // {
     //   id: '5',
     //   src: "/placeholder.svg?height=600&width=800&text=Coding+Session",
@@ -83,7 +84,8 @@ export default function Homepage() {
       {/* Three.js Animated Background */}
       <div className="fixed inset-0 -z-10">
         {/* <SimpleCodingBackground /> */}
-        <AnimatedBackground />
+        {/* <AnimatedBackground /> */}
+        <DemoOne />
         {/* <ThreeBackground /> */}
       </div>
 
