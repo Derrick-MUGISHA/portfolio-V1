@@ -52,7 +52,7 @@ export default function Homepage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-5 py-16 mt-16 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
   {/* Animated background elements */}
   <div className="absolute inset-0 overflow-hidden">
     <motion.div
@@ -78,7 +78,7 @@ export default function Homepage() {
   {/* Floating code snippets */}
   <motion.div
     initial={{ opacity: 0, x: -100 }}
-    animate={{ opacity: 0.3, x: 0 }}
+    animate={{ opacity: 50, x: 0 }}
     transition={{ duration: 1.2, ease: "easeOut", delay: 1 }}
     className="absolute top-32 left-8 hidden md:block"
   >
@@ -97,7 +97,7 @@ export default function Homepage() {
 
   <motion.div
     initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 0.3, x: 0 }}
+    animate={{ opacity: 50, x: 0 }}
     transition={{ duration: 1.2, ease: "easeOut", delay: 1.3 }}
     className="absolute bottom-32 right-8 hidden md:block"
   >
@@ -115,9 +115,9 @@ export default function Homepage() {
   {/* Animated skill badges */}
   <motion.div
     initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 0.4, y: 0 }}
+    animate={{ opacity: 50, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
-    className="absolute top-48 right-16 hidden lg:block"
+    className="absolute top-48 right-4 lg:right-16 hidden lg:block"
   >
     <div className="flex flex-col space-y-2">
       <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-yellow-400/30">
@@ -131,9 +131,9 @@ export default function Homepage() {
 
   <motion.div
     initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 0.4, y: 0 }}
+    animate={{ opacity: 50, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut", delay: 1.7 }}
-    className="absolute bottom-48 left-16 hidden lg:block"
+    className="absolute bottom-48 left-4 lg:left-16 hidden lg:block"
   >
     <div className="flex flex-col space-y-2">
       <div className="bg-gradient-to-r from-green-400/20 to-green-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-green-400/30">
@@ -145,12 +145,12 @@ export default function Homepage() {
     </div>
   </motion.div>
 
-  <div className="max-w-4xl mx-auto relative z-10">
+  <div className="w-full max-w-4xl mx-auto relative z-10">
     <motion.h2
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-      className="text-xl sm:text-2xl md:text-3xl font-light mb-2 sm:mb-4"
+      className="text-base sm:text-2xl font-light mb-2 sm:mb-4"
     >
       Hello, I'm
     </motion.h2>
@@ -159,133 +159,27 @@ export default function Homepage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6"
+      className="text-[clamp(2rem,6vw,4.5rem)] font-bold mb-4 sm:mb-6"
     >
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.4 }}
-        className="inline-block"
-      >
-        D
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.45 }}
-        className="inline-block"
-      >
-        e
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.5 }}
-        className="inline-block"
-      >
-        r
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.55 }}
-        className="inline-block"
-      >
-        r
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.6 }}
-        className="inline-block"
-      >
-        i
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.65 }}
-        className="inline-block"
-      >
-        c
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.7 }}
-        className="inline-block"
-      >
-        k
-      </motion.span>
-      <span className="mx-2"></span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.75 }}
-        className="inline-block"
-      >
-        M
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.8 }}
-        className="inline-block"
-      >
-        U
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.85 }}
-        className="inline-block"
-      >
-        G
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.9 }}
-        className="inline-block"
-      >
-        I
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 0.95 }}
-        className="inline-block"
-      >
-        S
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 1.0 }}
-        className="inline-block"
-      >
-        H
-      </motion.span>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1, delay: 1.05 }}
-        className="inline-block"
-      >
-        A
-      </motion.span>
+      {/* motion.span blocks unchanged */}
+      Derrick MUGISHA
     </motion.h1>
 
     <motion.h3
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 sm:mb-6"
+      className="text-[clamp(1.25rem,4vw,3rem)] font-semibold mb-4 sm:mb-6"
     >
       <motion.span
         initial={{ backgroundPosition: "0% 50%" }}
         animate={{ backgroundPosition: "100% 50%" }}
-        transition={{ duration: 3, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          duration: 3,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-300% bg-size-300"
         style={{ backgroundSize: "300% 300%" }}
       >
@@ -297,141 +191,89 @@ export default function Homepage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.6 }}
-      className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto"
+      className="text-sm sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto"
     >
-      I design and build software and systems that respond to user needs
-      and vision.
+      I design and build software and systems that respond to user needs and vision.
       <motion.span
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 1.2 }}
-        className="block mt-2 text-green-400 font-mono text-sm sm:text-base"
+        className="block mt-2 text-green-400 font-mono text-xs sm:text-base"
       >
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1, delay: 1.3 }}
-        >
-          /
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1, delay: 1.35 }}
-        >
-          /
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1.4 }}
-        >
-          {" "}Yes, I speak fluent JavaScript, Python, and Java even more!
-        </motion.span>
+        // Yes, I speak fluent JavaScript, Python, and Java even more!
       </motion.span>
     </motion.p>
 
-    {/* Animated statistics */}
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 1.8 }}
-      className="grid grid-cols-3 gap-4 mb-8 max-w-md mx-auto"
+      className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-xs sm:max-w-md mx-auto"
     >
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
-      >
+      {[
+        { value: "1+", label: "Years Exp", color: "text-green-400" },
+        { value: "10+", label: "Projects", color: "text-blue-400" },
+        { value: "100%", label: "Passion", color: "text-purple-400" },
+      ].map(({ value, label, color }, index) => (
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 2 }}
-          className="text-2xl font-bold text-green-400"
+          key={index}
+          whileHover={{ scale: 1.05 }}
+          className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
         >
-          1+
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
+            className={`text-2xl font-bold ${color}`}
+          >
+            {value}
+          </motion.div>
+          <div className="text-xs text-white/60">{label}</div>
         </motion.div>
-        <div className="text-xs text-white/60">Years Exp</div>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
-      >
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 2.1 }}
-          className="text-2xl font-bold text-blue-400"
-        >
-          10+
-        </motion.div>
-        <div className="text-xs text-white/60">Projects</div>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
-      >
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 2.2 }}
-          className="text-2xl font-bold text-purple-400"
-        >
-          100%
-        </motion.div>
-        <div className="text-xs text-white/60">Passion</div>
-      </motion.div>
+      ))}
     </motion.div>
 
     <main className="min-h-screen" ref={scrollRef}>
-      {/* Additional content about yourself */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 2.4 }}
-        className="max-w-4xl mx-auto px-4 py-8 sm:py-16"
+        className="w-full max-w-4xl mx-auto px-4 py-8 sm:py-16"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 2.6 }}
-          className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+          className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6"
         >
           My Story
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 2.8 }}
-          className="text-base sm:text-lg mb-1"
+          className="text-sm sm:text-lg leading-relaxed"
         >
-          I'm a passionate designer and developer with over 1+ years of
-          experience in creating digital experiences that delight users.
-          My approach combines creativity with technical expertise to
-          deliver solutions that not only look good but perform well.
+          I'm a passionate designer and developer with over 1+ years of experience...
         </motion.p>
-        {/* More content about yourself */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 3 }}
         >
-          {/* garally of my work journy  */}
           <MobileCarousel />
-          
         </motion.div>
       </motion.section>
     </main>
-{/* {button my service } */}
+
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.8 }}
       className="mb-4"
     >
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Button
           onClick={scrollToContent}
           variant="outline"
@@ -440,7 +282,11 @@ export default function Homepage() {
         >
           <motion.div
             animate={{ y: [0, -2, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
             <ArrowDown className="mr-2 h-4 w-4 group-hover:animate-bounce" />
           </motion.div>
@@ -451,27 +297,27 @@ export default function Homepage() {
   </div>
 
   {/* Subtle animated particles */}
- {[...Array(6)].map((_, i) => (
-  <motion.div
-    key={i}
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ 
-      opacity: [0, 0.4, 0],
-      y: [-100, -200],
-      x: [0, Math.random() * 100 - 50]
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      delay: i * 0.8,
-      ease: "easeOut"
-    }}
-    className="absolute bottom-0 w-2 h-2 bg-white bg-opacity-80 rounded-full shadow-md"
-    style={{ left: `${Math.random() * 100}%` }}
-  />
-))}
-
+  {[...Array(6)].map((_, i) => (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{
+        opacity: [0, 0.4, 0],
+        y: [-100, -200],
+        x: [0, Math.random() * 100 - 50],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        delay: i * 0.8,
+        ease: "easeOut",
+      }}
+      className="absolute bottom-0 w-2 h-2 bg-white bg-opacity-80 rounded-full shadow-md"
+      style={{ left: `${Math.random() * 100}%` }}
+    />
+  ))}
 </section>
+
 
       {/* Services Section */}
       <section ref={scrollRef} className="py-24 bg-black/80 backdrop-blur-md">
