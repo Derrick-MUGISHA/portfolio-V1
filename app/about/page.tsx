@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import AnimatedBackground from "@/components/animated-background"
+import { DemoOne } from "@/components/Newbg"
 
 export default function AboutPage() {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -82,7 +83,8 @@ export default function AboutPage() {
 
   return (
     <div className="relative min-h-screen">
-      <AnimatedBackground />
+      {/* <AnimatedBackground /> */}
+      <DemoOne />
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
