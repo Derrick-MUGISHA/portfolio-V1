@@ -4,10 +4,22 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [showIcon, setShowIcon] = useState(false)
 
   useEffect(() => {
+    // Check if user has already seen the loading screen
+    const hasVisited = localStorage.getItem("hasVisitedPortfolio")
+
+    // If already visited, skip loading screen
+    if (hasVisited) {
+      setIsLoading(false)
+      return
+    }
+
+    // Otherwise, show loading screen
+    setIsLoading(true)
+
     const slowNetwork =
       (navigator as any).connection?.effectiveType === "2g" ||
       (navigator as any).connection?.saveData
@@ -19,6 +31,7 @@ export default function LoadingScreen() {
     const delay = slowNetwork ? 4000 : 2500
     const loadingTimer = setTimeout(() => {
       setIsLoading(false)
+      localStorage.setItem("hasVisitedPortfolio", "true") // Mark as visited
     }, delay)
 
     return () => {
@@ -52,7 +65,7 @@ export default function LoadingScreen() {
                 >
                   <div className="w-24 h-24 md:w-32 md:h-32 relative z-10 rounded-full border-4 border-white/10 bg-white/5 backdrop-blur-md overflow-hidden shadow-lg">
                     <img
-                      src="/favicon.svg" // Prefer .png for image visibility and React compatibility
+                      src="/favicon.svg" // Use .png if .svg doesn't display well
                       alt="Icon"
                       className="w-full h-full object-contain"
                     />
@@ -75,6 +88,7 @@ export default function LoadingScreen() {
               )}
             </AnimatePresence>
 
+            {/* Progress bar */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: "200px" }}
@@ -82,6 +96,7 @@ export default function LoadingScreen() {
               className="h-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full mt-8"
             />
 
+            {/* Message */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

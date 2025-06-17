@@ -52,7 +52,7 @@ export default function Homepage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
+     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
   {/* Animated background elements */}
   <div className="absolute inset-0 overflow-hidden">
     <motion.div
@@ -161,7 +161,6 @@ export default function Homepage() {
       transition={{ duration: 0.5, delay: 0.2 }}
       className="text-[clamp(2rem,6vw,4.5rem)] font-bold mb-4 sm:mb-6"
     >
-      {/* motion.span blocks unchanged */}
       Derrick MUGISHA
     </motion.h1>
 
@@ -193,7 +192,8 @@ export default function Homepage() {
       transition={{ duration: 0.5, delay: 0.6 }}
       className="text-sm sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto"
     >
-      I design and build software and systems that respond to user needs and vision.
+      I design and build software and systems that respond to user needs
+      and vision.
       <motion.span
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -208,7 +208,7 @@ export default function Homepage() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 1.8 }}
-      className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-xs sm:max-w-md mx-auto"
+      className="flex gap-2 mb-8 justify-center items-center"
     >
       {[
         { value: "1+", label: "Years Exp", color: "text-green-400" },
@@ -218,17 +218,17 @@ export default function Homepage() {
         <motion.div
           key={index}
           whileHover={{ scale: 1.05 }}
-          className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
+          className="text-center p-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 min-w-[80px]"
         >
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
-            className={`text-2xl font-bold ${color}`}
+            className={`text-lg font-bold ${color}`}
           >
             {value}
           </motion.div>
-          <div className="text-xs text-white/60">{label}</div>
+          <div className="text-[10px] text-white/60">{label}</div>
         </motion.div>
       ))}
     </motion.div>
@@ -238,7 +238,7 @@ export default function Homepage() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 2.4 }}
-        className="w-full max-w-4xl mx-auto px-4 py-8 sm:py-16"
+        className="w-full max-w-4xl mx-auto px-4 py-4 sm:py-8"
       >
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -254,7 +254,8 @@ export default function Homepage() {
           transition={{ duration: 0.5, delay: 2.8 }}
           className="text-sm sm:text-lg leading-relaxed"
         >
-          I'm a passionate designer and developer with over 1+ years of experience...
+          I'm a passionate designer and developer with over 1+ years of
+          experience...
         </motion.p>
 
         <motion.div
@@ -267,11 +268,12 @@ export default function Homepage() {
       </motion.section>
     </main>
 
+    {/* Removed bottom margin here to close the gap */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.8 }}
-      className="mb-4"
+      className=""
     >
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Button
