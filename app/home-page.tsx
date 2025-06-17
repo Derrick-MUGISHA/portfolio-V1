@@ -13,8 +13,9 @@ import type { GitHubData } from "@/types/github";
 import SimpleCodingBackground from "@/components/simple-coding-background";
 import AnimatedBackground from "@/components/animated-background";
 import ThreeBackground from "@/components/three-background";
-import PersonalGallery from "@/components/ui/PortfolioGallery";
+// import PersonalGallery from "@/components/ui/PortfolioGallery";
 import { DemoOne } from "@/components/Newbg";
+import { MobileCarousel } from "@/components/ui/PortfolioGallery";
 
 export default function Homepage() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -39,46 +40,7 @@ export default function Homepage() {
   const scrollToContent = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  
-  const personalPhotos = [
-    {
-      id: '1',
-      src: 'https://clone-15su.onrender.com/images/IMG-20231225-WA0019-removebg-preview__1_-removebg-preview.png',
-      alt: 'Professional headshot',
-      caption: 'Professional',
-      description: 'My profile pic'
-    },
-    {
-      id: '2',
-      src: 'https://i.postimg.cc/0Nkm9xBg/May-27-2025-04-26-19-PM.png',
-      alt: 'Casual portrait',
-      caption: 'New version of Me',
-      description: 'New trying version of my self'
-    },
-    {
-      id: '3',
-      src: 'https://i.postimg.cc/J0DsChMb/Snapchat-2102374093.jpg',
-      alt: 'Pursuing my hobby',
-      caption: 'MY Locking Mood',
-      description: 'Capturing moments in the Office'
-    },
-    {
-      id: '4',
-      src: 'https://i.postimg.cc/pXBZd2jD/Snapchat-1102779594.jpg',
-      alt: 'Travel photo',
-      caption: 'Meeting Time 🦾',
-      description: 'One of the most memorable moments with my team'
-    },
-    // {
-    //   id: '5',
-    //   src: "/placeholder.svg?height=600&width=800&text=Coding+Session",
-    //   alt: 'Speaking at an event',
-    //   caption: 'Public Speaker',
-    //   description: 'Sharing insights at the design summit'
-    // }
-  ];
 
-  
   return (
     <div className="relative min-h-screen">
       {/* Three.js Animated Background */}
@@ -95,11 +57,12 @@ export default function Homepage() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="text-xl sm:text-2xl md:text-3xl font-light mb-2 sm:mb-4"
           >
             Hello, I'm
           </motion.h2>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,20 +93,27 @@ export default function Homepage() {
             </span>
           </motion.p>
           <main className="min-h-screen" ref={scrollRef}>
-        <PersonalGallery photos={personalPhotos} />
+            <MobileCarousel />
 
-        {/* Additional content about yourself */}
-        <section className="max-w-4xl mx-auto px-4 py-8 sm:py-16"> {/* Responsive padding */}
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">My Story</h2> {/* Responsive text and spacing */}
-          <p className="text-base sm:text-lg mb-4"> {/* Responsive text */}
-            I'm a passionate designer and developer with over 1+ years of
-            experience in creating digital experiences that delight users.
-            My approach combines creativity with technical expertise to
-            deliver solutions that not only look good but perform well.
-          </p>
-          {/* More content about yourself */}
-        </section>
-      </main>
+            {/* Additional content about yourself */}
+            <section className="max-w-4xl mx-auto px-4 py-8 sm:py-16">
+              {" "}
+              {/* Responsive padding */}
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+                My Story
+              </h2>{" "}
+              {/* Responsive text and spacing */}
+              <p className="text-base sm:text-lg mb-4">
+                {" "}
+                {/* Responsive text */}
+                I'm a passionate designer and developer with over 1+ years of
+                experience in creating digital experiences that delight users.
+                My approach combines creativity with technical expertise to
+                deliver solutions that not only look good but perform well.
+              </p>
+              {/* More content about yourself */}
+            </section>
+          </main>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
