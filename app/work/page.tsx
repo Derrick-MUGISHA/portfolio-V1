@@ -27,6 +27,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AnimatedBackground from "@/components/animated-background";
 import { fetchGitHubData } from "@/lib/github";
 import type { GitHubData } from "@/types/github";
+import { DemoOne } from "@/components/Newbg";
 
 interface Certificate {
   id: string;
@@ -202,8 +203,11 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="relative min-h-screen">
-      <AnimatedBackground />
+    <div className="relative min-h-screen w-full">
+      {/* Full Screen Background */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        <DemoOne />
+      </div>
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">

@@ -30,6 +30,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import AnimatedBackground from "@/components/animated-background";
+import { DemoOne } from "@/components/Newbg";
 
 export default function ServicesPage() {
   const { toast } = useToast();
@@ -227,8 +228,11 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="relative min-h-screen">
-      <AnimatedBackground />
+    <div className="relative min-h-screen w-full">
+          {/* Full Screen Background */}
+          <div className="fixed inset-0 w-full h-full -z-10">
+            <DemoOne />
+          </div>
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
