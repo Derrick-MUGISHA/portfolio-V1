@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import AnimatedBackground from "@/components/animated-background"
+import { DemoOne } from "@/components/Newbg"
 
 interface BlogPost {
   id: string
@@ -109,8 +110,11 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="relative min-h-screen">
-      <AnimatedBackground />
+    <div className="relative min-h-screen w-full">
+          {/* Full Screen Background */}
+          <div className="fixed inset-0 w-full h-full -z-10">
+            <DemoOne />
+          </div>
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">

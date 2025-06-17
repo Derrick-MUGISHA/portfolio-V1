@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, use } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, Calendar, Clock, Tag, Share2, Bookmark, MessageSquare, ThumbsUp } from "lucide-react"
@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import AnimatedBackground from "@/components/animated-background"
+import { DemoOne } from "@/components/Newbg"
 
 interface BlogPost {
   id: string
@@ -27,17 +28,20 @@ interface BlogPost {
   }
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
+export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const [post, setPost] = useState<BlogPost | null>(null)
   const [loading, setLoading] = useState(true)
   const [liked, setLiked] = useState(false)
   const [bookmarked, setBookmarked] = useState(false)
 
+  // Unwrap the params Promise
+  const resolvedParams = use(params)
+
   useEffect(() => {
     // In a real app, you would fetch the post data from an API
     // For this example, we'll use mock data
     const mockPost: BlogPost = {
-      id: params.id,
+      id: resolvedParams.id,
       title: "Building Responsive Web Applications with React and Tailwind CSS",
       content: `
         <p>In today's digital landscape, creating responsive web applications is no longer optional—it's essential. Users access websites from a variety of devices with different screen sizes, from smartphones and tablets to desktop computers and even large displays. A responsive design ensures that your application looks and functions well across all these devices.</p>
@@ -158,7 +162,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
     setPost(mockPost)
     setLoading(false)
-  }, [params.id])
+  }, [resolvedParams.id])
 
   const formatDate = (dateString: string) => {
     const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" }
@@ -167,8 +171,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
   if (loading) {
     return (
-      <div className="relative min-h-screen">
-        <AnimatedBackground />
+      <div className="relative min-h-screen w-full">
+                {/* Full Screen Background */}
+                <div className="fixed inset-0 w-full h-full -z-10">
+                  <DemoOne />
+                </div>
         <div className="container mx-auto px-4 pt-24">
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
@@ -180,8 +187,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
   if (!post) {
     return (
-      <div className="relative min-h-screen">
-        <AnimatedBackground />
+      <div className="relative min-h-screen w-full">
+                {/* Full Screen Background */}
+                <div className="fixed inset-0 w-full h-full -z-10">
+                  <DemoOne />
+                </div>
         <div className="container mx-auto px-4 pt-24">
           <div className="text-center py-12 text-white/70">
             <h2 className="text-2xl font-bold text-white mb-4">Post Not Found</h2>
@@ -196,8 +206,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="relative min-h-screen">
-      <AnimatedBackground />
+    <div className="relative min-h-screen w-full">
+                {/* Full Screen Background */}
+                <div className="fixed inset-0 w-full h-full -z-10">
+                  <DemoOne />
+                </div>
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
@@ -332,4 +345,3 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
     </div>
   )
 }
-

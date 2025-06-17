@@ -1,54 +1,64 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowLeft, Send, Mail, MapPin, Phone, CheckCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
-import AnimatedBackground from "@/components/animated-background"
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Send,
+  Mail,
+  MapPin,
+  Phone,
+  CheckCircle,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+import AnimatedBackground from "@/components/animated-background";
+import { DemoOne } from "@/components/Newbg";
 
 export default function ContactPage() {
-  const { toast } = useToast()
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
-  const [loading, setLoading] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
+  });
+  const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
 
     try {
       // Send data to API route
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to: "derrickmugisha169@gmail.com" // The recipient email
+          to: "derrickmugisha169@gmail.com", // The recipient email
         }),
-      })
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (response.ok) {
         // Show success notification
@@ -57,49 +67,53 @@ export default function ContactPage() {
           description: "Thank you! Your email has been sent to Derrick.",
           variant: "default",
           className: "bg-green-600 text-white border-green-700",
-        })
-        
+        });
+
         // Show success message in form
-        setShowSuccess(true)
-        setTimeout(() => setShowSuccess(false), 5000)
-        
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 5000);
+
         // Reset form after successful submission
         setFormData({
           name: "",
           email: "",
           subject: "",
           message: "",
-        })
+        });
       } else {
         toast({
           title: "Error sending message",
           description: data.error || "Something went wrong. Please try again.",
-          variant: "destructive"
-        })
+          variant: "destructive",
+        });
       }
     } catch (error) {
       toast({
         title: "Error sending message",
         description: "An unexpected error occurred. Please try again later.",
-        variant: "destructive"
-      })
-      console.error("Error sending email:", error)
+        variant: "destructive",
+      });
+      console.error("Error sending email:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="relative min-h-screen">
-      {/* Three.js Animated Background */}
-      <div className="fixed inset-0 -z-10">
-         <AnimatedBackground />
+    <div className="relative min-h-screen w-full">
+      {/* Full Screen Background */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        <DemoOne />
       </div>
 
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <div className="mb-8">
-            <Button asChild variant="ghost" className="text-white hover:text-white/80 -ml-4">
+            <Button
+              asChild
+              variant="ghost"
+              className="text-white hover:text-white/80 -ml-4"
+            >
               <Link href="/" className="flex items-center">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
@@ -113,31 +127,41 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="max-w-5xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Get In Touch
+            </h1>
             <p className="text-xl text-white/70 mb-12">
-              Have a project in mind? Let's discuss how I can help bring your ideas to life.
+              Have a project in mind? Let's discuss how I can help bring your
+              ideas to life.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
                   {showSuccess && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="bg-green-600/90 text-white p-4 rounded-lg mb-6 flex items-center"
                     >
                       <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Thank you for your message!</p>
-                        <p className="text-sm text-white/90">Your email has been successfully sent to Derrick.</p>
+                        <p className="font-medium">
+                          Thank you for your message!
+                        </p>
+                        <p className="text-sm text-white/90">
+                          Your email has been successfully sent to Derrick.
+                        </p>
                       </div>
                     </motion.div>
                   )}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-white font-medium">
+                        <label
+                          htmlFor="name"
+                          className="text-white font-medium"
+                        >
                           Your Name
                         </label>
                         <Input
@@ -151,7 +175,10 @@ export default function ContactPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-white font-medium">
+                        <label
+                          htmlFor="email"
+                          className="text-white font-medium"
+                        >
                           Your Email
                         </label>
                         <Input
@@ -167,7 +194,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-white font-medium">
+                      <label
+                        htmlFor="subject"
+                        className="text-white font-medium"
+                      >
                         Subject
                       </label>
                       <Input
@@ -181,7 +211,10 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-white font-medium">
+                      <label
+                        htmlFor="message"
+                        className="text-white font-medium"
+                      >
                         Message
                       </label>
                       <Textarea
@@ -194,7 +227,11 @@ export default function ContactPage() {
                         placeholder="Tell me about your project..."
                       />
                     </div>
-                    <Button type="submit" disabled={loading} className="w-full bg-white text-black hover:bg-white/90">
+                    <Button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-white text-black hover:bg-white/90"
+                    >
                       {loading ? (
                         <span className="flex items-center">
                           <svg
@@ -233,8 +270,13 @@ export default function ContactPage() {
               <div>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 space-y-8">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
-                    <p className="text-white/70 mb-6">Feel free to reach out through any of the following channels.</p>
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      Contact Information
+                    </h3>
+                    <p className="text-white/70 mb-6">
+                      Feel free to reach out through any of the following
+                      channels.
+                    </p>
                     <ul className="space-y-4">
                       <li className="flex items-start">
                         <Mail className="h-6 w-6 text-white mr-3 mt-0.5 min-w-[24px]" />
@@ -259,7 +301,10 @@ export default function ContactPage() {
                         <Phone className="h-5 w-5 text-white mr-3 mt-0.5" />
                         <div>
                           <p className="text-white font-medium">Phone</p>
-                          <a href="tel:+250793094202" className="text-white/70 hover:text-white transition-colors">
+                          <a
+                            href="tel:+250793094202"
+                            className="text-white/70 hover:text-white transition-colors"
+                          >
                             +250 793 094 202
                           </a>
                         </div>
@@ -268,7 +313,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-4">Follow Me</h3>
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      Follow Me
+                    </h3>
                     <div className="flex space-x-4">
                       <Link
                         href="https://github.com/Derrick-MUGISHA"
@@ -335,7 +382,6 @@ export default function ContactPage() {
                           <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                         </svg>
                       </Link>
-
                     </div>
                   </div>
                 </div>
@@ -347,9 +393,11 @@ export default function ContactPage() {
 
       <footer className="py-8 bg-black/90 backdrop-blur-md border-t border-white/10">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-white/70">© {new Date().getFullYear()} DERRICK MUGISHA. All rights reserved.</p>
+          <p className="text-white/70">
+            © {new Date().getFullYear()} DERRICK MUGISHA. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
