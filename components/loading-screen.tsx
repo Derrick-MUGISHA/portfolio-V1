@@ -5,21 +5,24 @@ import { motion, AnimatePresence } from "framer-motion"
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
-  const [showInitials, setShowInitials] = useState(false)
+  const [showIcon, setShowIcon] = useState(false)
 
   useEffect(() => {
-    // Show initials after a short delay
-    const initialsTimer = setTimeout(() => {
-      setShowInitials(true)
+    const slowNetwork =
+      (navigator as any).connection?.effectiveType === "2g" ||
+      (navigator as any).connection?.saveData
+
+    const iconTimer = setTimeout(() => {
+      setShowIcon(true)
     }, 300)
 
-    // Hide loading screen after a delay
+    const delay = slowNetwork ? 4000 : 2500
     const loadingTimer = setTimeout(() => {
       setIsLoading(false)
-    }, 2500)
+    }, delay)
 
     return () => {
-      clearTimeout(initialsTimer)
+      clearTimeout(iconTimer)
       clearTimeout(loadingTimer)
     }
   }, [])
@@ -35,7 +38,7 @@ export default function LoadingScreen() {
         >
           <div className="relative flex flex-col items-center">
             <AnimatePresence>
-              {showInitials && (
+              {showIcon && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -47,10 +50,12 @@ export default function LoadingScreen() {
                   }}
                   className="relative"
                 >
-                  <div className="text-6xl md:text-8xl font-bold text-white relative z-10">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                      DM
-                    </span>
+                  <div className="w-24 h-24 md:w-32 md:h-32 relative z-10 rounded-full border-4 border-white/10 bg-white/5 backdrop-blur-md overflow-hidden shadow-lg">
+                    <img
+                      src="/favicon.svg" // Prefer .png for image visibility and React compatibility
+                      alt="Icon"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   {/* Animated glow effect */}
@@ -83,7 +88,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-white/50 mt-4 text-sm font-mono"
             >
-              Welcome to my portfolio...
+              Hang on...
             </motion.p>
           </div>
         </motion.div>
@@ -91,4 +96,3 @@ export default function LoadingScreen() {
     </AnimatePresence>
   )
 }
-
