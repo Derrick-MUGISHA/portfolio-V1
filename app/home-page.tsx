@@ -16,6 +16,7 @@ import ThreeBackground from "@/components/three-background";
 // import PersonalGallery from "@/components/ui/PortfolioGallery";
 import { DemoOne } from "@/components/Newbg";
 import { MobileCarousel } from "@/components/ui/PortfolioGallery";
+// import smoothscroll from 'smoothscroll-polyfill';
 
 export default function Homepage() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -23,6 +24,12 @@ export default function Homepage() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+
+    // Apply smooth scrolling to the entire page
+    document.documentElement.style.scrollBehavior = "smooth";
+    
+    // Apply polyfill for browsers that don't support smooth scrolling
+    // smoothscroll.polyfill();
     const getGitHubData = async () => {
       try {
         const data = await fetchGitHubData("Derrick-MUGISHA");
