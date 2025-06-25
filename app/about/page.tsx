@@ -23,25 +23,25 @@ export default function AboutPage() {
       caption: "Deep in the zone, debugging a particularly tricky recursive function.",
     },
     {
-      src: "/placeholder.svg?height=600&width=800&text=Conference+Talk",
-      alt: "Speaking at a tech conference",
-      caption: "Sharing my insights on modern web development frameworks at DevCon 2023.",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750875742/IMG_20250622_160124_375_vgbjus.jpg",
+      alt: "Speaking at a tech VidariPay conference",
+      caption: "Sharing my insights on my work at VidariPay 2025.",
     },
     {
-      src: "/placeholder.svg?height=600&width=800&text=Team+Collaboration",
-      alt: "Collaborating with team",
-      caption: "Whiteboarding session with my team - where the magic happens!",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750875741/Snapchat-1742999027_kri1xv.jpg",
+      alt: "My Working Space",
+      caption: "My workspace where the magic happens - coffee, code, and a lot of creativity.",
     },
     {
-      src: "/placeholder.svg?height=600&width=800&text=Hackathon+Winner",
-      alt: "Winning a hackathon",
-      caption: "Celebrating after our team won first place at the 48-hour CodeJam hackathon.",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750876131/Snapchat-272213231_i0ghvp.jpg",
+      alt: "Kigali corner",
+      caption: "Where we make the idea come to life - coding in the heart of Kigali.",
     },
     {
-      src: "/placeholder.svg?height=600&width=800&text=Outdoor+Adventure",
-      alt: "Hiking adventure",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750876541/Snapchat-1388004638_grkyes.jpg",
+      alt: "Vidaripay",
       caption:
-        "Finding inspiration in nature - sometimes the best code solutions come when you're away from the screen.",
+        "Proude to be a part of VidariPay, where we are revolutionizing digital payments in Africa.",
     },
   ]
 

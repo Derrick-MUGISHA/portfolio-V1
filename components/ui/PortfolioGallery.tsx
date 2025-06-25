@@ -28,6 +28,24 @@ export const MobileCarousel = () => {
       alt: "Travel photo",
       caption: "Meeting Time 🦾",
     },
+    {
+      id: "5",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750875742/IMG_20250622_160124_375_vgbjus.jpg",
+      alt: "Family gathering",
+      caption: "Vidaripay Team member",
+    },
+    {
+      id: "6",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750875741/Snapchat-1742999027_kri1xv.jpg",
+      alt: "Celebration moment",
+      caption: "My Working Space",
+    },
+    {
+      id: "7",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1750876131/Snapchat-272213231_i0ghvp.jpg",
+      alt: "Outdoor adventure",
+      caption: "Kigali corner",
+    },
   ];
 
   const duplicatedImages = [...personalPhotos, ...personalPhotos];
