@@ -14,16 +14,16 @@ const timelineEvents = [
   {
     year: "2023",
     title: "Ui/UX Designer",
-    description: "Created visually appealing and user-friendly interfaces for web applications.",
+    description: "Created visually appealing and user-friendly interfaces for web applications in Dscover Rwanda",
     technologies: ["figma", "Adobe XD", "Sketch", "InVision"],
-    highlight: true,
+    highlight: false,
   },
   {
     year: "2024",
     title: "Frontend Developer",
-    description: "Completed a BootCamp focused on frontend development.",
+    description: "A frontend developer at Discover Rwanda",
     technologies: ["React", "Redux", "SASS", "Webpack"],
-    highlight: false,
+    highlight: true,
   },
   {
     year: "2025",
@@ -32,13 +32,13 @@ const timelineEvents = [
     technologies: ["Node.js", "Express", "MongoDB", "TypeScript", "PostgreSQL", "GraphQL", "REST API"],
     highlight: false,
   },
-  // {
-  //   year: "2019",
-  //   title: "Computer Science Degree",
-  //   description: "Graduated with a degree in Computer Science with focus on software development.",
-  //   technologies: [],
-  //   highlight: true,
-  // },
+  {
+    year: "2025",
+    title: "Frontend Developer",
+    description: "Worked as a frontend developer at Vidaripay",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "TypeScript", "Shadcn UI", "Gsap"],
+    highlight: true,
+  },
 ]
 
 export default function Timeline() {
