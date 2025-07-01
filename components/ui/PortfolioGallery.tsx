@@ -46,6 +46,12 @@ export const MobileCarousel = () => {
       alt: "Outdoor adventure",
       caption: "Kigali corner",
     },
+    {
+      id: "8",
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1751402101/IMG_2194.JPEG_fouw7g.jpg",
+      alt: "Vidaripay",
+      caption: "Conference",
+    },
   ];
 
   const duplicatedImages = [...personalPhotos, ...personalPhotos];

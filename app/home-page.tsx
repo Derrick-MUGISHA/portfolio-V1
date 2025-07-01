@@ -24,10 +24,9 @@ export default function Homepage() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-
     // Apply smooth scrolling to the entire page
     document.documentElement.style.scrollBehavior = "smooth";
-    
+
     // Apply polyfill for browsers that don't support smooth scrolling
     // smoothscroll.polyfill();
     const getGitHubData = async () => {
@@ -59,274 +58,275 @@ export default function Homepage() {
       </div>
 
       {/* Hero Section */}
-     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
-  {/* Animated background elements */}
-  <div className="absolute inset-0 overflow-hidden">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 0.1, scale: 1 }}
-      transition={{ duration: 2, ease: "easeOut" }}
-      className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl"
-    />
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 0.1, scale: 1 }}
-      transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
-      className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-green-400 to-blue-500 rounded-full blur-xl"
-    />
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 0.05, scale: 1 }}
-      transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
-      className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl"
-    />
-  </div>
-
-  {/* Floating code snippets */}
-  <motion.div
-    initial={{ opacity: 0, x: -100 }}
-    animate={{ opacity: 50, x: 0 }}
-    transition={{ duration: 1.2, ease: "easeOut", delay: 1 }}
-    className="absolute top-32 left-8 hidden md:block"
-  >
-    <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-      <code className="text-green-400 text-xs font-mono">
-        const developer = {"{"}
-        <br />
-        &nbsp;&nbsp;name: "Derrick",
-        <br />
-        &nbsp;&nbsp;passion: "coding"
-        <br />
-        {"}"};
-      </code>
-    </div>
-  </motion.div>
-
-  <motion.div
-    initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 50, x: 0 }}
-    transition={{ duration: 1.2, ease: "easeOut", delay: 1.3 }}
-    className="absolute bottom-32 right-8 hidden md:block"
-  >
-    <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-      <code className="text-blue-400 text-xs font-mono">
-        function createAmazing() {"{"}
-        <br />
-        &nbsp;&nbsp;return "magic" + "code";
-        <br />
-        {"}"}
-      </code>
-    </div>
-  </motion.div>
-
-  {/* Animated skill badges */}
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 50, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
-    className="absolute top-48 right-4 lg:right-16 hidden lg:block"
-  >
-    <div className="flex flex-col space-y-2">
-      <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-yellow-400/30">
-        <span className="text-yellow-400 text-xs font-medium">JavaScript</span>
-      </div>
-      <div className="bg-gradient-to-r from-blue-400/20 to-blue-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-400/30">
-        <span className="text-blue-400 text-xs font-medium">React</span>
-      </div>
-    </div>
-  </motion.div>
-
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 50, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut", delay: 1.7 }}
-    className="absolute bottom-48 left-4 lg:left-16 hidden lg:block"
-  >
-    <div className="flex flex-col space-y-2">
-      <div className="bg-gradient-to-r from-green-400/20 to-green-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-green-400/30">
-        <span className="text-green-400 text-xs font-medium">Python</span>
-      </div>
-      <div className="bg-gradient-to-r from-red-400/20 to-red-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-red-400/30">
-        <span className="text-red-400 text-xs font-medium">Java</span>
-      </div>
-    </div>
-  </motion.div>
-
-  <div className="w-full max-w-4xl mx-auto relative z-10">
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-      className="text-base sm:text-2xl font-light mb-2 sm:mb-4"
-    >
-      Hello, I'm
-    </motion.h2>
-
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="text-[clamp(2rem,6vw,4.5rem)] font-bold mb-4 sm:mb-6"
-    >
-      Derrick MUGISHA
-    </motion.h1>
-
-    <motion.h3
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.4 }}
-      className="text-[clamp(1.25rem,4vw,3rem)] font-semibold mb-4 sm:mb-6"
-    >
-      <motion.span
-        initial={{ backgroundPosition: "0% 50%" }}
-        animate={{ backgroundPosition: "100% 50%" }}
-        transition={{
-          duration: 3,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className="bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-300% bg-size-300"
-        style={{ backgroundSize: "300% 300%" }}
-      >
-        A Software Developer and a UI/UX Designer
-      </motion.span>
-    </motion.h3>
-
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.6 }}
-      className="text-sm sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto"
-    >
-      I design and build software and systems that respond to user needs
-      and vision.
-      <motion.span
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-        className="block mt-2 text-green-400 font-mono text-xs sm:text-base"
-      >
-        // Yes, I speak fluent JavaScript, Python, and Java even more!
-      </motion.span>
-    </motion.p>
-
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 1.8 }}
-      className="flex gap-2 mb-8 justify-center items-center"
-    >
-      {[
-        { value: "1+", label: "Years Exp", color: "text-green-400" },
-        { value: "10+", label: "Projects", color: "text-blue-400" },
-        { value: "100%", label: "Passion", color: "text-purple-400" },
-      ].map(({ value, label, color }, index) => (
-        <motion.div
-          key={index}
-          whileHover={{ scale: 1.05 }}
-          className="text-center p-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 min-w-[80px]"
-        >
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
-            className={`text-lg font-bold ${color}`}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+            className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-green-400 to-blue-500 rounded-full blur-xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.05, scale: 1 }}
+            transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
+            className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl"
+          />
+        </div>
+
+        {/* Floating code snippets */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 50, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 1 }}
+          className="absolute top-32 left-8 hidden md:block"
+        >
+          <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <code className="text-green-400 text-xs font-mono">
+              const developer = {"{"}
+              <br />
+              &nbsp;&nbsp;name: "Derrick",
+              <br />
+              &nbsp;&nbsp;passion: "coding"
+              <br />
+              {"}"};
+            </code>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 50, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 1.3 }}
+          className="absolute bottom-32 right-8 hidden md:block"
+        >
+          <div className="bg-black/20 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <code className="text-blue-400 text-xs font-mono">
+              function createAmazing() {"{"}
+              <br />
+              &nbsp;&nbsp;return "magic" + "code";
+              <br />
+              {"}"}
+            </code>
+          </div>
+        </motion.div>
+
+        {/* Animated skill badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 50, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
+          className="absolute top-48 right-4 lg:right-16 hidden lg:block"
+        >
+          <div className="flex flex-col space-y-2">
+            <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-yellow-400/30">
+              <span className="text-yellow-400 text-xs font-medium">
+                JavaScript
+              </span>
+            </div>
+            <div className="bg-gradient-to-r from-blue-400/20 to-blue-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-400/30">
+              <span className="text-blue-400 text-xs font-medium">React</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 50, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.7 }}
+          className="absolute bottom-48 left-4 lg:left-16 hidden lg:block"
+        >
+          <div className="flex flex-col space-y-2">
+            <div className="bg-gradient-to-r from-green-400/20 to-green-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-green-400/30">
+              <span className="text-green-400 text-xs font-medium">Python</span>
+            </div>
+            <div className="bg-gradient-to-r from-red-400/20 to-red-600/20 backdrop-blur-sm rounded-full px-3 py-1 border border-red-400/30">
+              <span className="text-red-400 text-xs font-medium">Java</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="w-full max-w-4xl mx-auto relative z-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="text-base sm:text-2xl font-light mb-2 sm:mb-4"
           >
-            {value}
-          </motion.div>
-          <div className="text-[10px] text-white/60">{label}</div>
-        </motion.div>
-      ))}
-    </motion.div>
+            Hello, I'm
+          </motion.h2>
 
-    <main className="min-h-screen" ref={scrollRef}>
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 2.4 }}
-        className="w-full max-w-4xl mx-auto px-4 py-4 sm:py-8"
-      >
-        <motion.h2
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 2.6 }}
-          className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6"
-        >
-          My Story
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 2.8 }}
-          className="text-sm sm:text-lg leading-relaxed"
-        >
-          I'm a passionate designer and developer with over 1+ years of
-          experience...
-        </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[clamp(2rem,6vw,4.5rem)] font-bold mb-4 sm:mb-6"
+          >
+            Derrick MUGISHA
+          </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 3 }}
-        >
-          <MobileCarousel />
-        </motion.div>
-      </motion.section>
-    </main>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-[clamp(1.25rem,4vw,3rem)] font-semibold mb-4 sm:mb-6"
+          >
+            <motion.span
+              initial={{ backgroundPosition: "0% 50%" }}
+              animate={{ backgroundPosition: "100% 50%" }}
+              transition={{
+                duration: 3,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-300% bg-size-300"
+              style={{ backgroundSize: "300% 300%" }}
+            >
+              A Software Developer and a UI/UX Designer
+            </motion.span>
+          </motion.h3>
 
-    {/* Removed bottom margin here to close the gap */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-      className=""
-    >
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-        <Button
-          onClick={scrollToContent}
-          variant="outline"
-          size="lg"
-          className="rounded-full border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-6 py-2 group"
-        >
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-sm sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto"
+          >
+            I design and build software and systems that respond to user needs
+            and vision.
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="block mt-2 text-green-400 font-mono text-xs sm:text-base"
+            >
+              // Yes, I speak fluent JavaScript, Python, and Java even more!
+            </motion.span>
+          </motion.p>
+
           <motion.div
-            animate={{ y: [0, -2, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
+            className="flex gap-2 mb-8 justify-center items-center"
+          >
+            {[
+              { value: "1+", label: "Years Exp", color: "text-green-400" },
+              { value: "10+", label: "Projects", color: "text-blue-400" },
+              { value: "100%", label: "Passion", color: "text-purple-400" },
+            ].map(({ value, label, color }, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 min-w-[80px]"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
+                  className={`text-lg font-bold ${color}`}
+                >
+                  {value}
+                </motion.div>
+                <div className="text-[10px] text-white/60">{label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <main className="min-h-screen" ref={scrollRef}>
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 2.4 }}
+              className="w-full max-w-4xl mx-auto px-4 py-4 sm:py-8"
+            >
+              <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 2.6 }}
+                className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6"
+              >
+                My Story
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 2.8 }}
+                className="text-sm sm:text-lg leading-relaxed"
+              >
+                I'm a passionate designer and developer with over 1+ years of
+                experience...
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 3 }}
+              >
+                <MobileCarousel />
+              </motion.div>
+            </motion.section>
+          </main>
+
+          {/* Removed bottom margin here to close the gap */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className=""
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                onClick={scrollToContent}
+                variant="outline"
+                size="lg"
+                className="rounded-full border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-6 py-2 group"
+              >
+                <motion.div
+                  animate={{ y: [0, -2, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <ArrowDown className="mr-2 h-4 w-4 group-hover:animate-bounce" />
+                </motion.div>
+                MY SERVICES
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Subtle animated particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{
+              opacity: [0, 0.4, 0],
+              y: [-100, -200],
+              x: [0, Math.random() * 100 - 50],
             }}
-          >
-            <ArrowDown className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-          </motion.div>
-          MY SERVICES
-        </Button>
-      </motion.div>
-    </motion.div>
-  </div>
-
-  {/* Subtle animated particles */}
-  {[...Array(6)].map((_, i) => (
-    <motion.div
-      key={i}
-      initial={{ opacity: 0, y: 100 }}
-      animate={{
-        opacity: [0, 0.4, 0],
-        y: [-100, -200],
-        x: [0, Math.random() * 100 - 50],
-      }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        delay: i * 0.8,
-        ease: "easeOut",
-      }}
-      className="absolute bottom-0 w-2 h-2 bg-white bg-opacity-80 rounded-full shadow-md"
-      style={{ left: `${Math.random() * 100}%` }}
-    />
-  ))}
-</section>
-
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: i * 0.8,
+              ease: "easeOut",
+            }}
+            className="absolute bottom-0 w-2 h-2 bg-white bg-opacity-80 rounded-full shadow-md"
+            style={{ left: `${Math.random() * 100}%` }}
+          />
+        ))}
+      </section>
 
       {/* Services Section */}
       <section ref={scrollRef} className="py-24 bg-black/80 backdrop-blur-md">

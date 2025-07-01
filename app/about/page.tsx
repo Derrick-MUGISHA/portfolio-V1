@@ -43,6 +43,12 @@ export default function AboutPage() {
       caption:
         "Proude to be a part of VidariPay, where we are revolutionizing digital payments in Africa.",
     },
+    {
+      src: "https://res.cloudinary.com/dvl1iht4u/image/upload/v1751402101/IMG_2194.JPEG_fouw7g.jpg",
+      alt: "Vidaripay",
+      caption:
+        "Proud to be a part of VidariPay, where these was my speech on the conference.",
+    },
   ]
 
   const nextImage = () => {
