@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     "Derrick Mugisha, a Full Stack Software Developer specializing in creating exceptional digital experiences.",
   metadataBase: new URL("https://derrickmugisha.vercel.app"),
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "DERRICK MUGISHA - Full Stack Software Developer",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-
+const isDarkMode = true;
 export default function RootLayout({
   children,
 }: {
@@ -59,13 +59,12 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
           rel="stylesheet"
         />
-        
       </head>
+
       <body className={`${inter.className} bg-black text-white`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+          defaultTheme={isDarkMode ? "dark" : "light"}
           disableTransitionOnChange
         >
           <LoadingScreen />
