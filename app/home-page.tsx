@@ -13,10 +13,8 @@ import type { GitHubData } from "@/types/github";
 import SimpleCodingBackground from "@/components/simple-coding-background";
 import AnimatedBackground from "@/components/animated-background";
 import ThreeBackground from "@/components/three-background";
-// import PersonalGallery from "@/components/ui/PortfolioGallery";
 import { DemoOne } from "@/components/Newbg";
 import { MobileCarousel } from "@/components/ui/PortfolioGallery";
-// import smoothscroll from 'smoothscroll-polyfill';
 
 export default function Homepage() {
   const [gitHubData, setGitHubData] = useState<GitHubData | null>(null);
@@ -497,7 +495,7 @@ export default function Homepage() {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto h-[600px]">
             <TestimonialCarousel />
           </div>
         </div>
