@@ -71,7 +71,7 @@ export default function RootLayout({
           <ResponsiveNavigation />
           {children}
           <WhatsAppContact />
-          <ContentPress />
+          {/* <ContentPress /> */}
         </ThemeProvider>
       </body>
     </html>

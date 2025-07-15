@@ -69,7 +69,8 @@ export default function TestimonialCarousel() {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden ">
+       
+      <div className="overflow-hidden">
         <div
           className="relative h-[400px] md:h-[300px]"
           onMouseEnter={() => setAutoplay(false)}
@@ -136,26 +137,6 @@ export default function TestimonialCarousel() {
             </motion.div>
           </AnimatePresence>
         </div>
-        {/* <div className="m-8 flex items-center justify-center space-x-4 gap-8">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={prev}
-            className="rounded-full border-white/20 text-white hover:bg-white/10 hover:text-white"
-          >
-            <ChevronLeft className="h-4 w-4" />
-            <span className="sr-only">Previous</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={next}
-            className="rounded-full border-white/20 text-white hover:bg-white/10 hover:text-white"
-          >
-            <ChevronRight className="h-4 w-4" />
-            <span className="sr-only">Next</span>
-          </Button>
-        </div> */}
       </div>
 
       <div className="flex justify-center mt-6 space-x-2">

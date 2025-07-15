@@ -56,7 +56,7 @@ export default function Homepage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-16 mt-16 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-5 py-8 mt-16 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -244,7 +244,7 @@ export default function Homepage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 2.4 }}
-              className="w-full max-w-4xl mx-auto px-4 py-1 sm:py-8"
+              className="w-full max-w-4xl mx-auto px-4 py-1"
             >
               <motion.h2
                 initial={{ opacity: 0, x: -20 }}
@@ -260,8 +260,7 @@ export default function Homepage() {
                 transition={{ duration: 0.5, delay: 2.8 }}
                 className="text-sm sm:text-lg leading-relaxed"
               >
-                I'm a passionate designer and developer with over 1+ years of
-                experience...
+                I'm a passionate designer and developer with over a year of hands-on experience crafting engaging digital experiences, combining creativity with technical expertise to bring innovative ideas to life
               </motion.p>
 
               <motion.div
@@ -495,14 +494,14 @@ export default function Homepage() {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto h-[600px]">
+          <div className="max-w-5xl mx-auto h-[300px]">
             <TestimonialCarousel />
           </div>
         </div>
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-24 bg-black/80 backdrop-blur-md">
+      <section className="bg-black/80 backdrop-blur-md py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
