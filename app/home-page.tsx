@@ -244,7 +244,7 @@ export default function Homepage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 2.4 }}
-              className="w-full max-w-4xl mx-auto px-4 py-4 sm:py-8"
+              className="w-full max-w-4xl mx-auto px-4 py-1 sm:py-8"
             >
               <motion.h2
                 initial={{ opacity: 0, x: -20 }}
@@ -286,7 +286,7 @@ export default function Homepage() {
                 onClick={scrollToContent}
                 variant="outline"
                 size="lg"
-                className="rounded-full border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-6 py-2 group"
+                className="rounded-full border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-6 group"
               >
                 <motion.div
                   animate={{ y: [0, -2, 0] }}
