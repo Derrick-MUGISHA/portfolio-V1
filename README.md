@@ -116,7 +116,7 @@ I'm **Derrick Mugisha**, a passionate software engineer focused on building clea
 
 * 💼 Portfolio: [derrickmugisha.vercel.app](https://derrickmugisha.vercel.app)
 * 🐙 GitHub: [@Derrick-MUGISHA](https://github.com/Derrick-MUGISHA)
-* 📫 Email: `youremail@example.com` *(update this)*
+* 📫 Email: `derrickmugisha169@gmail.com`
 
 ---
 
