@@ -124,9 +124,6 @@ I'm **Derrick Mugisha**, a passionate software engineer focused on building clea
 
 Pull requests, suggestions, or improvements are welcome! Feel free to fork and contribute.
 
-````
-
----
 
 ### **How to Use This on GitHub:**
 1. **Upload Screenshots**:  
@@ -137,8 +134,7 @@ Pull requests, suggestions, or improvements are welcome! Feel free to fork and c
 
 3. **Commit Changes**:  
    After adding the screenshots and updating the README file, run the following commands to commit and push your changes:
-
-   ```bash
+bash
    git add .
    git commit -m "Add updated README with screenshots"
    git push origin master
