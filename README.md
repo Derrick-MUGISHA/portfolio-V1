@@ -18,7 +18,7 @@
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](./public/screenshots/home.png)
+![Home Page](https://res.cloudinary.com/dvl1iht4u/image/upload/v1752015956/Screenshot_2025-07-09_010404_sqcu7s.png)
 
 ### 📂 Projects Section
 ![Projects](./public/screenshots/projects.png)
@@ -144,9 +144,3 @@ Pull requests, suggestions, or improvements are welcome! Feel free to fork and c
    git push origin master
 ````
 
-4. **Check the Result**:
-   Go to your GitHub repository to see the updated `README.md`. The images should render properly in the file preview.
-
----
-
-Let me know if you need any further customizations or assistance!
