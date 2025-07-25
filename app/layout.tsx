@@ -6,6 +6,7 @@ import ResponsiveNavigation from "@/components/responsive-navigation";
 import LoadingScreen from "@/components/loading-screen";
 import WhatsAppContact from "@/components/whatsapp-contact";
 import ContentPress from "@/components/content-press";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,6 +71,7 @@ export default function RootLayout({
           <LoadingScreen />
           <ResponsiveNavigation />
           {children}
+          <SpeedInsights />
           <WhatsAppContact />
           {/* <ContentPress /> */}
         </ThemeProvider>
