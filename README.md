@@ -1,13 +1,7 @@
-Here's a **professional-grade `README.md`** for your portfolio repository, now with **screenshots**, polished formatting, and a clean layout ideal for GitHub presentation.
 
-Please follow the instructions after the README to add your actual screenshots.
-
----
-
-```markdown
 # 💼 Derrick Mugisha – Portfolio V1
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-Visit-blue?style=for-the-badge&logo=vercel&logoColor=white)](https://derrickmugisha.vercel.app)
+[![Live Site](https://res.cloudinary.com/dvl1iht4u/image/upload/v1752015956/Screenshot_2025-07-09_010404_sqcu7s.png)](https://derrickmugisha.vercel.app)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-black?style=for-the-badge&logo=github)](https://github.com/Derrick-MUGISHA/portfolio-V1)
 
 > A modern, fully responsive portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
@@ -134,32 +128,25 @@ Pull requests, suggestions, or improvements are welcome! Feel free to fork and c
 
 ---
 
-### ✅ Instructions for Screenshot Setup
+### **How to Use This on GitHub:**
+1. **Upload Screenshots**:  
+   Add your screenshots (e.g., `home.png`, `projects.png`, `mobile.png`) to the `public/screenshots/` directory in your repo.
 
-1. **Take Screenshots**:
-   - Capture full-page screenshots (home, about, projects, mobile view).
-   - Recommended dimensions: 1200×800px for desktop, 400×800px for mobile.
+2. **Replace Placeholder Paths**:  
+   Ensure that the image paths like `./public/screenshots/home.png` correspond to the location where you've uploaded your screenshots.
 
-2. **Place in `public/screenshots/`**:
-   - Name them: `home.png`, `projects.png`, `mobile.png`
-   - File structure:
-     ```
-     public/
-     └── screenshots/
-         ├── home.png
-         ├── projects.png
-         └── mobile.png
-     ```
+3. **Commit Changes**:  
+   After adding the screenshots and updating the README file, run the following commands to commit and push your changes:
 
-3. **Push to GitHub**:
-   Commit and push your updated images and `README.md`.
-
-```bash
-git add public/screenshots/*.png README.md
-git commit -m "Add screenshots to README"
-git push origin master
+   ```bash
+   git add .
+   git commit -m "Add updated README with screenshots"
+   git push origin master
 ````
+
+4. **Check the Result**:
+   Go to your GitHub repository to see the updated `README.md`. The images should render properly in the file preview.
 
 ---
 
-Let me know if you'd like help generating preview images automatically or optimizing them for GitHub!
+Let me know if you need any further customizations or assistance!
